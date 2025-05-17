@@ -1,0 +1,18 @@
+$color-box-text: white;
+$border-radius: 10px;
+$color-base-1: red;
+$color-base-2: blue;
+$color-base-3: green;
+
+@mixin box-base($color) {
+  background-color: $color;
+  padding: 25px;
+}
+@mixin reset {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}

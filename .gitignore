@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Ignorar node_modules y dist en cualquier carpeta (como entrega-1/, entrega-2/, etc.)
+**/node_modules/
+**/dist/
+**/dist-ssr/
+
+# Archivos locales y temporales
+*.local
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+
+# Archivos de entorno
+.env
+.env.*
+
+# Ignorar otros editores/IDE
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
