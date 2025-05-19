@@ -1,0 +1,38 @@
+@use "sass:color";
+$color-base-principal: red;
+$color-base-secondary: blue;
+$box-shadow-principal: -10px;
+$box-shadow-secondary: 10px;
+
+@mixin reset {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin general-box-styles {
+  width: 80px;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid gray;
+  font-weight: 700;
+}
+@mixin fonts($font) {
+  font-family: $font;
+}
+@mixin box-shadow($value) {
+  box-shadow: $value 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+@mixin box-background($i, $color) {
+  @if ($i == 1) {
+    background-color: $color;
+  }
+  @if ($i == 2) {
+    background-color: color.scale($color, $lightness: -40%);
+  }
+  @if ($i == 3) {
+    background-color: color.scale($color, $lightness: 50%);
+  }
+}
+
