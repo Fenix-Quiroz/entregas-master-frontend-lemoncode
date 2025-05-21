@@ -1,0 +1,8 @@
+$border-card: rgb(184, 182, 182);
+$bg-button: rgb(117, 222, 117);
+
+@mixin reset {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

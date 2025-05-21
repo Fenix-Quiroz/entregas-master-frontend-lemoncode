@@ -1,0 +1,56 @@
+@use "base" as *;
+* {
+  @include reset;
+}
+
+.container {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 1px solid $border-card;
+}
+.card-img {
+  width: 100%;
+}
+.card {
+  header {
+    h2 {
+      margin: 10px;
+    }
+  }
+}
+.card main {
+  padding: 15px 10px;
+  .card-description {
+    line-height: 1.5;
+  }
+  .card-published {
+    text-align: right;
+    margin-top: 30px;
+    span {
+      color: $bg-button;
+    }
+  }
+}
+
+.card footer {
+  width: 100%;
+  padding: 10px;
+  .card-button {
+    background-color: $bg-button;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 1.2em;
+  }
+}
