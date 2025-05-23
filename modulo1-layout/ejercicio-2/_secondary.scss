@@ -1,31 +1,13 @@
 @use "base" as *;
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
-.secondary {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@for $i from 1 through 3 {
-  .secondary .box-#{$i} {
-    @include box-background($i, $color-base-secondary);
-    @include general-box-styles;
-    border-radius: 5px;
-  }
+.container {
+  @include box-background($color-base-secondary);
 }
 
-.secondary .box-font {
-  font-family: "Roboto Mono", monospace;
-  > :first-child {
-    font-size: 14px;
-  }
-  > :last-child {
-    font-size: 18px;
-    font-weight: 500;
-  }
+.box-font {
+  @include box-font($font-secondary);
 }
-.secondary .box-shadow {
+.box-shadow {
   @include general-box-styles;
   @include box-shadow($box-shadow-secondary);
   border-radius: 5px;
