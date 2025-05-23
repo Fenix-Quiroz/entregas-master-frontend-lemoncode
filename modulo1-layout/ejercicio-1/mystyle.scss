@@ -1,5 +1,5 @@
 @use "base" as *;
-@use "sass:color";
+
 body {
   @include reset;
 }
@@ -27,35 +27,12 @@ body {
   background-color: gray;
 }
 
-@for $i from 1 through 4 {
-  .container-#{$i} > .base-color {
-    @if ($i == 1) {
-      @include box-base($color-base-1);
-    } @else if($i == 2) {
-      @include box-base($color-base-2);
-    } @else if($i == 3) {
-      @include box-base($color-base-3);
-    }
+@each $i, $color in $colors {
+  .container-#{$i} {
+    @include color($color);
   }
 }
 
-@for $i from 1 through 4 {
-  .container-1 > .darken-#{$i} {
-    background-color: color.scale($color-base-1, $lightness: - 1 * $i * 15%);
-  }
-  .container-2 .darken-#{$i} {
-    background-color: color.scale($color-base-2, $lightness: -1 * $i * 15%);
-  }
-  .container-3 .darken-#{$i} {
-    background-color: color.scale($color-base-3, $lightness: -1 * $i * 15%);
-  }
-  .container-1 > .lighten-#{$i} {
-    background-color: color.scale($color-base-1, $lightness: $i * 15%);
-  }
-  .container-2 .lighten-#{$i} {
-    background-color: color.scale($color-base-2, $lightness: $i * 15%);
-  }
-  .container-3 .lighten-#{$i} {
-    background-color: color.scale($color-base-3, $lightness: $i * 15%);
-  }
-}
+
+
+

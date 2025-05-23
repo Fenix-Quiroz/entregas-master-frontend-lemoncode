@@ -1,8 +1,14 @@
+@use "sass:color";
 $color-box-text: white;
 $border-radius: 10px;
 $color-base-1: red;
 $color-base-2: blue;
 $color-base-3: green;
+$colors: (
+  1: $color-base-1,
+  2: $color-base-2,
+  3: $color-base-3,
+);
 
 @mixin box-base($color) {
   background-color: $color;
@@ -15,4 +21,18 @@ $color-base-3: green;
   display: grid;
   place-content: center;
   height: 100vh;
+}
+
+@mixin color($color) {
+  .base-color {
+    background-color: $color;
+  }
+  @for $i from 1 through 4 {
+    .darken-#{$i} {
+      background-color: color.scale($color, $lightness: - 1 * $i * 15%);
+    }
+    .lighten-#{$i} {
+      background-color: color.scale($color, $lightness: $i * 15%);
+    }
+  }
 }
